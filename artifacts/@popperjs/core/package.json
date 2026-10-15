@@ -1,0 +1,30 @@
+{
+  "name": "@popperjs/core",
+  "version": "1.8.0",
+  "private": true,
+  "type": "module",
+  "description": "Popper-compatible build of @floating-ui/dom@1.8.0. Copy this folder into an application and override @popperjs/core with it.",
+  "main": "./dist/cjs/popper.cjs",
+  "module": "./lib/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./dist/cjs/popper.cjs",
+      "default": "./dist/cjs/popper.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "index.d.ts",
+    "dist",
+    "lib"
+  ],
+  "floatingUi": {
+    "dom": "1.8.0",
+    "core": "1.8.0",
+    "utils": "0.2.12"
+  }
+}

@@ -19,6 +19,7 @@
     "playwright": "turbo playwright",
     "playwright:update": "turbo playwright -- -u",
     "build": "turbo build",
+    "build:popper": "pnpm --dir packages/popper-compat build:popper",
     "build:api": "turbo build:api",
     "clean": "turbo clean",
     "publint": "turbo publint",
