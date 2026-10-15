@@ -8,6 +8,28 @@
 > For help on migrating, check out the
 > [Migration Guide.](https://floating-ui.com/docs/migration)
 
+## About this fork
+
+This repository fixes the Element Plus zoom misalignment issue. Element Plus
+positions overlays such as dropdowns, popovers, and select menus with Popper.
+When the page is scaled with CSS `zoom`, those overlays can shift away from
+their anchors. This fork builds `@floating-ui/dom` into a drop-in
+`@popperjs/core` package so Element Plus can position them correctly.
+
+### Build the compatible package
+
+From the repository root, install dependencies and build the Popper-compatible
+package:
+
+```shell
+pnpm install
+pnpm run build:popper
+```
+
+`pnpm run build:popper` bundles `@floating-ui/dom` and writes a copyable
+`@popperjs/core` package to `artifacts/@popperjs/core`. Copy that folder into
+your application and use it in place of `@popperjs/core`.
+
 [Floating UI](https://floating-ui.com) is a small library that helps you create
 "floating" elements such as tooltips, popovers, dropdowns, and more.
 
