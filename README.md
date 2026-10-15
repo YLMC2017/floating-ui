@@ -26,9 +26,13 @@ pnpm install
 pnpm run build:popper
 ```
 
-`pnpm run build:popper` bundles `@floating-ui/dom` and writes a copyable
-`@popperjs/core` package to `artifacts/@popperjs/core`. Copy that folder into
-your application and use it in place of `@popperjs/core`.
+`pnpm run build:popper` bundles `@floating-ui/dom` and writes
+`@ylmc2026/popper-compat` to `artifacts/@popperjs/core`. Install it in place of
+`@popperjs/core`:
+
+```shell
+npm install @popperjs/core@npm:@ylmc2026/popper-compat
+```
 
 [Floating UI](https://floating-ui.com) is a small library that helps you create
 "floating" elements such as tooltips, popovers, dropdowns, and more.

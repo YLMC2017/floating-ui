@@ -13,13 +13,22 @@ const corePkg = readJson(path.resolve(repoRoot, 'packages/core/package.json'));
 const utilsPkg = readJson(path.resolve(repoRoot, 'packages/utils/package.json'));
 
 const manifest = {
-  name: '@popperjs/core',
-  version: domPkg.version,
-  private: true,
+  name: '@ylmc2026/popper-compat',
+  version: '1.0.1',
+  license: 'MIT',
   type: 'module',
   description:
     `Popper-compatible build of @floating-ui/dom@${domPkg.version}. ` +
-    'Copy this folder into an application and override @popperjs/core with it.',
+    'Use it in place of @popperjs/core to fix Element Plus zoom misalignment.',
+  homepage: 'https://github.com/YLMC2017/floating-ui#readme',
+  bugs: {
+    url: 'https://github.com/YLMC2017/floating-ui/issues',
+  },
+  repository: {
+    type: 'git',
+    url: 'git+https://github.com/YLMC2017/floating-ui.git',
+    directory: 'packages/popper-compat',
+  },
   main: './dist/cjs/popper.cjs',
   module: './lib/index.js',
   types: './index.d.ts',
@@ -33,7 +42,7 @@ const manifest = {
     './package.json': './package.json',
   },
   sideEffects: false,
-  files: ['index.d.ts', 'dist', 'lib'],
+  files: ['index.d.ts', 'dist', 'lib', 'README.md'],
   floatingUi: {
     dom: domPkg.version,
     core: corePkg.version,
@@ -49,4 +58,8 @@ fs.writeFileSync(
 fs.copyFileSync(
   path.join(packageRoot, 'index.d.ts'),
   path.join(outDir, 'index.d.ts'),
+);
+fs.copyFileSync(
+  path.join(packageRoot, 'README.md'),
+  path.join(outDir, 'README.md'),
 );

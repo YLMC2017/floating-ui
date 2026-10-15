@@ -1,9 +1,18 @@
 {
-  "name": "@popperjs/core",
-  "version": "1.8.0",
-  "private": true,
+  "name": "@ylmc2026/popper-compat",
+  "version": "1.0.1",
+  "license": "MIT",
   "type": "module",
-  "description": "Popper-compatible build of @floating-ui/dom@1.8.0. Copy this folder into an application and override @popperjs/core with it.",
+  "description": "Popper-compatible build of @floating-ui/dom@1.8.0. Use it in place of @popperjs/core to fix Element Plus zoom misalignment.",
+  "homepage": "https://github.com/YLMC2017/floating-ui#readme",
+  "bugs": {
+    "url": "https://github.com/YLMC2017/floating-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YLMC2017/floating-ui.git",
+    "directory": "packages/popper-compat"
+  },
   "main": "./dist/cjs/popper.cjs",
   "module": "./lib/index.js",
   "types": "./index.d.ts",
@@ -20,7 +29,8 @@
   "files": [
     "index.d.ts",
     "dist",
-    "lib"
+    "lib",
+    "README.md"
   ],
   "floatingUi": {
     "dom": "1.8.0",
